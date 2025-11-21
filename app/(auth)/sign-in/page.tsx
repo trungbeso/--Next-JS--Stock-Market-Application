@@ -35,6 +35,7 @@ const SignIn = () => {
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
                 <InputField name="email"
                             label="Email"
+                            type="email"
                             placeholder="BenjaminNguyen@gmail.com"
                             register={register}
                             error={errors.email}
@@ -44,13 +45,13 @@ const SignIn = () => {
                             }}/>
                 <InputField name="password"
                             label="Password"
-                            placeholder="Enter a your password"
+                            placeholder="Enter your password"
                             register={register}
                             error={errors.password}
                             type="password"
                             validation={{
                                 required: 'Password is required',
-                                minLength: {value: 6, message: 'Full name must be at least 6 characters long'}
+                                minLength: {value: 6, message: 'Password must be at least 6 characters long'}
                             }}/>
                 <Button type="submit" disabled={isSubmitting} className="yellow-btn w-full mt-5">
                     {isSubmitting ? 'Signing in . . .' : 'Log In Now'}
