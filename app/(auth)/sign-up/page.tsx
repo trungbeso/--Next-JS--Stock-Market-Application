@@ -3,7 +3,7 @@
 import {Button} from "@/components/ui/button";
 import {useForm} from "react-hook-form";
 import InputField from "@/components/forms/InputField";
-import SelectField from "@/components/forms/SelectFiled";
+import SelectField from "@/components/forms/SelectField";
 import {INVESTMENT_GOALS, PREFERRED_INDUSTRIES, RISK_TOLERANCE_OPTIONS} from "@/lib/constants";
 import CountrySelectField from "@/components/forms/CountrySelectField";
 import FooterLink from "@/components/forms/FooterLink";
@@ -53,6 +53,7 @@ const SignUp = () => {
                             }}/>
                 <InputField name="email"
                             label="Email"
+                            type="email"
                             placeholder="BenjaminNguyen@gmail.com"
                             register={register}
                             error={errors.email}
@@ -68,7 +69,7 @@ const SignUp = () => {
                             type="password"
                             validation={{
                                 required: 'Password is required',
-                                minLength: {value: 6, message: 'Full name must be at least 6 characters long'}
+                                minLength: {value: 6, message: 'Password must be at least 6 characters long'}
                             }}/>
 
                 {/*Country*/}
@@ -82,7 +83,7 @@ const SignUp = () => {
                 />
 
                 <SelectField
-                    name="investmentGoal"
+                    name="investmentGoals"
                     label="Investment Goals"
                     placeholder="Select your investment goal"
                     options={INVESTMENT_GOALS}
